@@ -2,8 +2,13 @@
 
 import axios from 'axios';
 
+import ProjectCard from "../src/components/ProjectCard.vue";
+
 export default {
   name: 'App',
+  components: {
+    ProjectCard,
+  },
   data() {
     return {
       base_api_url: 'http://127.0.0.1:8000',
@@ -18,8 +23,9 @@ export default {
         .get(url)
         .then(response => {
           console.log(response);
-          //this.projects = response.data.projects
+          this.projects = response.data.projects
           //this.loading = false
+          //console.log(response.data.projects);
         })
         .catch(err => {
           console.error(err);
@@ -36,7 +42,17 @@ export default {
 </script>
 
 <template>
-  Hello Portofolio!
+  <main>
+    <div class="container">
+      <div class="row">
+
+        <ProjectCard :project="project" v-for="project in projects.data"></ProjectCard>
+
+      </div>
+    </div>
+
+
+  </main>
 </template>
 
 <style scoped></style>
