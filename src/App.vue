@@ -6,53 +6,7 @@ import ProjectCard from "../src/components/ProjectCard.vue";
 
 export default {
   name: 'App',
-  components: {
-    ProjectCard,
-  },
-  data() {
-    return {
-      base_api_url: 'http://127.0.0.1:8000',
-      base_projects_url: '/api/projects',
-      projects: [],
-      //loading: true
-    }
-  },
-  methods: {
 
-    /**Mi permette di effettuare una chiama API al mio server locale con il parametro che passo in pagina
-     * 
-     * @param {string} page 
-     */
-    goTo(page) {
-      //console.log(page);
-      //Sfrutto callAPI
-      this.callAPI(page)
-    },
-
-    /**Mi permette di effettuare una chiama API al mio server locale
- * 
- * @param {string} url 
- */
-    callAPI(url) {
-      axios
-        .get(url)
-        .then(response => {
-          console.log(response);
-          this.projects = response.data.projects
-          //this.loading = false
-          //console.log(response.data.projects);
-        })
-        .catch(err => {
-          console.error(err);
-        })
-    }
-  },
-
-  mounted() {
-    //Chiamo la funzione nel Mounted per avere già dati in pagina
-    let url = this.base_api_url + this.base_projects_url
-    this.callAPI(url);
-  }
 }
 
 </script>
@@ -66,10 +20,12 @@ export default {
           aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarID">
-          <div class="navbar-nav">
-            <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-
+        <div class="collapse navbar-collapse " id="navbarID">
+          <div class="navbar-nav text-light">
+            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'home' }">Home</RouterLink>
+            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'about' }">About</RouterLink>
+            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'blog' }">Blog</RouterLink>
+            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'contacts' }">Contacts</RouterLink>
           </div>
         </div>
       </div>
