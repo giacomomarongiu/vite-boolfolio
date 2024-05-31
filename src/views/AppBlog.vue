@@ -60,6 +60,7 @@ export default {
 </script>
 
 <template>
+    <AppHeader></AppHeader>
     <main>
         <h2 class="text-center m-5">Welcome, let's see my projects</h2>
         <div class="container">

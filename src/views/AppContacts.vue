@@ -1,6 +1,11 @@
 <script>
+import AppHeader from "../components/AppHeader.vue"
+
 export default {
     name: 'AppContacts',
+    components: {
+        AppHeader,
+    },
 }
 
 </script>
@@ -8,7 +13,8 @@ export default {
 
 <template>
     <div>
-CONTACTS
+        <AppHeader></AppHeader>
+        CONTACTS
     </div>
 </template>
 

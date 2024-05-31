@@ -1,14 +1,20 @@
 <script>
+import AppHeader from "../components/AppHeader.vue"
+
 export default {
     name: 'AppAbout',
+    components: {
+        AppHeader,
+    },
 }
 
 </script>
 
 
 <template>
+    <AppHeader></AppHeader>
     <div>
-ABOUT
+        ABOUT
     </div>
 </template>
 
