@@ -26,3 +26,10 @@ Implementate quanto visto a lezione:
 3) importazione del file router.js in main.js
 4) utilizzo del plugin router sull'istanza vue creata
 5) realizzazione pagine home, projects, about, contacts
+
+
+### Structure Brainstorming
+ 1) Minimal home - 100% Viewport with links, name, short presentation, my social-media
+ 2) Portfolio/Blog - With all my projects
+ 3) Contacts page - with a form 
+ 4) About me - Curriculum
