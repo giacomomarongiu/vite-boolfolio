@@ -68,7 +68,7 @@ export default {
         </button>
         <div class="collapse navbar-collapse" id="navbarID">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <RouterLink :to="{ name: 'home' }">Home</RouterLink>
 
           </div>
         </div>
@@ -77,36 +77,7 @@ export default {
   </header>
 
   <main>
-    <h2 class="text-center m-5">Welcome, let's see my projects</h2>
-    <div class="container">
-      <div class="row g-4">
-
-        <!--Ciclo all'interno del mio array, ho bisogno del .data perché il resto del mio array associativo mi da altre info-->
-        <ProjectCard :project="project" v-for="project in projects.data"></ProjectCard>
-      </div>
-      <nav aria-label="Page navigation">
-        <ul class="pagination    ">
-
-          <!--Viaggio all'interno delle pagine richiamando il metodo goTo che a sua volta richiama il metodo callApi-->
-          <!--Prev-->
-          <li class="page-item" v-show="projects.prev_page_url" @click="goTo(projects.prev_page_url)">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-
-          <!--Next-->
-          <li class="page-item" v-show="projects.next_page_url" @click="goTo(projects.next_page_url)">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-
-
+    <RouterView></RouterView>
   </main>
 
   <footer>
