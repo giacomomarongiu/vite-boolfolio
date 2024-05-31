@@ -33,7 +33,7 @@ export default {
                     <h1 class="text-center ibm-plex-mono-bold">
                         Giacomo Marongiu
                     </h1>
-                    <p class="text-center ibm-plex-mono-thin">from Sardinia | Italy</p>
+                    <p class="text-center ibm-plex-mono-thin text_small">from Sardinia | Italy</p>
                     <div class="text-center ibm-plex-mono-regular">
                         Aspiring Full Stack Developer | Formed by Boolean - Class 119
                     </div>
@@ -59,7 +59,7 @@ export default {
 </template>
 
 
-<style scoped>
+<style lang="scss">
 .my_bg_main {
     background-color: rgba(241, 245, 252, 0.973);
     height: 100vh;
@@ -84,6 +84,6 @@ h1 {
 }
 
 .text_small{
-    font-size: 10px;
+    font-size: 12px;
 }
 </style>
