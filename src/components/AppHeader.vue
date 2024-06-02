@@ -5,30 +5,23 @@ name: "AppHeader",
 </script>
 
 <template>
-    <div>
-        <header>
-            <nav class="navbar navbar-expand-sm navbar-light bg-primary mb-3">
-                <div class="container">
-                    <a class="navbar-brand fw-bold" href="#">My portfolio</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
-                        aria-controls="navbarID" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse " id="navbarID">
-                        <div class="navbar-nav text-light">
-                            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'home' }">Home
-                            </RouterLink>
-                            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'about' }">About
-                            </RouterLink>
-                            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'blog' }">Blog
-                            </RouterLink>
-                            <RouterLink class="text-light text-decoration-none p-1" :to="{ name: 'contacts' }">Contacts
-                            </RouterLink>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
+    <div class="links d-flex justify-content-end">
+        <nav class="navbar bg-transparent">
+            <form class="container-fluid justify-content-end bg-transparent">
+                <RouterLink class="btn border-0 btn-sm btn-outline-secondary bg-none text-decoration-none"
+                    :to="{ name: 'home' }">Home
+                </RouterLink>
+                <RouterLink class="btn border-0  btn-sm btn-outline-secondary bg-none text-decoration-none"
+                    :to="{ name: 'blog' }">Blog
+                </RouterLink>
+                <RouterLink class="btn border-0  btn-sm btn-outline-secondary bg-none text-decoration-none"
+                    :to="{ name: 'about' }">About
+                </RouterLink>
+                <RouterLink class="btn border-0  btn-sm btn-outline-secondary bg-none text-decoration-none"
+                    :to="{ name: 'contacts' }">Contacts
+                </RouterLink>
+            </form>
+        </nav>
     </div>
 </template>
 

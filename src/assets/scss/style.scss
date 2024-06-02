@@ -1,1 +1,16 @@
-@use '/src/assets/scss/partials/font.scss';
+@use '/src/assets/scss/partials/font.scss'  as *;
+@use '/src/assets/scss/partials/_variables.scss'  as *;
+@use '/src/assets/scss/partials/utilities.scss'  as *;
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+.inner-square {
+    height: 100vh;
+    width: 100vw;
+    border: 1rem solid $myBlueBorder;
+}

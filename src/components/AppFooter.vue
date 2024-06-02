@@ -4,13 +4,17 @@ export default {
 }
 </script>
 <template>
-    <footer>
-        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-            <div class="container-fluid d-flex justify-content-center">
-                <a class="navbar-brand" href="#">Copyright 2024 - Giacomo Marongiu @119</a>
-            </div>
-        </nav>
-    </footer>
+    <div class="bottom_square d-flex justify-content-between">
+        <div class="copyright text-start text-secondary ibm-plex-mono-thin pb-2">
+            <i class="fa fa-copyright" aria-hidden="true"></i>
+            <span class="text_small"> Copyrith 2024 - All rights reserved.</span>
+        </div>
+        <div class="icons d-flex gap-3 text-end"> <i class="fa fa-linkedin" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-github" aria-hidden="true"></i>
+        </div>
+    </div>
 </template>
 
 

@@ -96,4 +96,4 @@ export default {
 
 </template>
 
-<style lang="scss"></style>
+<style scoped></style>
