@@ -17,7 +17,7 @@ export default {
 <template>
     <main class="my_bg_main">
         <div class="container-fluid p-0 h-100 d-flex justify-content-center align-items-center">
-            <div class="inner-square row justify-content-between flex-column">
+            <div class="inner-square d-flex px-2 justify-content-between flex-column">
                 <AppHeader></AppHeader>
                 <div class="my_name">
                     <h1 class="text-center ibm-plex-mono-bold">

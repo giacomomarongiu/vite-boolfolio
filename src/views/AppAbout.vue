@@ -1,6 +1,7 @@
 <script>
 import axios from 'axios';
 import AppHeader from "../components/AppHeader.vue"
+import AppFooter from "../components/AppFooter.vue"
 
 
 
@@ -8,6 +9,7 @@ export default {
     name: 'AppAbout',
     components: {
         AppHeader,
+        AppFooter
     },
     data() {
         return {
@@ -20,7 +22,7 @@ export default {
     },
     methods: {
 
-        prev(){
+        prev() {
             this.activeIndex = (this.activeIndex === 0) ? this.projects.length - 1 : this.activeIndex - 1;
 
         },
@@ -57,35 +59,50 @@ export default {
 
 
 <template>
-    <AppHeader></AppHeader>
-    <main>
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <!--                 <div class="carousel-item active">
-                    <img :src="this.projects[1].img" class="d-block w-100" alt="...">
-                </div> -->
-                <div class="carousel-item" v-for="(project,index) in this.projects"
-                    :class="{ active: index === activeIndex }">
-                    {{ console.log(project.img) }}
-                    <template v-if="(project.img).startsWith('uploads')">
-                        <img class="card-img-top" :src="project.img" alt="">
-                    </template>
-                    <template v-else>
-                        <img class="card-img-top" :src=" project.img" alt="">
-                    </template>
+
+    <main class="my_bg_main">
+        <div class="container-fluid p-0 h-100 d-flex justify-content-center align-items-center">
+            <div class="inner-square d-flex  px-2 justify-content-between flex-column">
+                <AppHeader></AppHeader>
+
+                <div id="carouselExample" class="carousel slide mb-5">
+                    <div class="carousel-inner m-auto my_height">
+
+                        <div class="carousel-item" v-for="(project, index) in this.projects"
+                            :class="{ active: index === activeIndex }">
+                            {{ console.log(project.img) }}
+                            <template v-if="(project.img).startsWith('uploads')">
+                                <img class="card-img-top" :src="project.img" alt="">
+                            </template>
+                            <template v-else>
+                                <img class="card-img-top" :src="project.img" alt="">
+                            </template>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
+
+                <AppFooter></AppFooter>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
     </main>
+
 </template>
 
 
-<style lang="scss"></style>
+<style lang="scss">
+.my_height{
+    max-height: 70vh;
+    max-width: 150vh;
+}
+
+</style>
