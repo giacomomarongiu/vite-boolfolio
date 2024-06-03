@@ -13,9 +13,9 @@ export default {
 
 </script>
 
-<template>
+<template >
 
-    <div class="col-6">
+    <div class="col-6" v-if="project">
         <RouterLink :to=" '/projects/' + project.id">
             <div class="card">
                 <template v-if="project">
@@ -48,6 +48,7 @@ export default {
             </div>
         </RouterLink>
     </div>
+    <div v-else>Loading</div>
 </template>
 
 <style lang="scss"></style>

@@ -73,6 +73,7 @@ export default {
                             {{ console.log(project.img) }}
                             <template v-if="(project.img).startsWith('uploads')">
                                 <img class="card-img-top" :src="project.img" alt="">
+
                             </template>
                             <template v-else>
                                 <img class="card-img-top" :src="project.img" alt="">
@@ -100,9 +101,8 @@ export default {
 
 
 <style lang="scss">
-.my_height{
+.my_height {
     max-height: 70vh;
     max-width: 150vh;
 }
-
 </style>

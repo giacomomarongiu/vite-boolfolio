@@ -32,4 +32,4 @@ Implementate quanto visto a lezione:
  1) Minimal home - 100% Viewport with links, name, short presentation, my social-media
  2) Portfolio/Blog - With all my projects
  3) Contacts page - with a form 
- 4) About me - Curriculum
+ 4) About me - Curriculum 

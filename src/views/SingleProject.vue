@@ -36,7 +36,7 @@ export default {
         }
     },
     created() {
-        //Chiamo la funzione nel Mounted per avere già dati in pagina
+        //Chiamo la funzione nel Created per avere già dati in pagina
         this.projectID = this.$route.params.id;
         let url = this.base_api_url + this.base_projects_url + '/' + this.projectID;
         console.log(url);
