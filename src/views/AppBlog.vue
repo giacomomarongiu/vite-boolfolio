@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import ProjectCard from "../components/ProjectCard.vue";
 import AppHeader from "../components/AppHeader.vue"
+import { RouterLink } from 'vue-router';
 
 export default {
     name: 'AppBlog',
@@ -62,12 +63,12 @@ export default {
 <template>
     <AppHeader></AppHeader>
     <main>
-        
+
         <h2 class="text-center m-5">Welcome, let's see my projects</h2>
         <div class="container">
             <div class="row g-4">
                 <!--Ciclo all'interno del mio array, ho bisogno del .data perché il resto del mio array associativo mi da altre info-->
-                <ProjectCard :project="project" v-for="project in projects.data"></ProjectCard>
+                    <ProjectCard :project="project" v-for="project in projects.data"></ProjectCard>
             </div>
             <nav aria-label="Page navigation">
                 <ul class="pagination    ">

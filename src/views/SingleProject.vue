@@ -5,7 +5,7 @@ import ProjectCard from '../components/ProjectCard.vue';
 export default {
     name: 'SingleProject',
 
-    components: { 
+    components: {
         ProjectCard
     },
 
@@ -47,9 +47,8 @@ export default {
 
 <template>
     <div> {{ console.log(this.project) }}
-     <ProjectCard :project="this.project"></ProjectCard>
-
-  </div>
+        <ProjectCard :project="this.project"></ProjectCard>
+    </div>
 </template>
 
 <style lang="scss"></style>
