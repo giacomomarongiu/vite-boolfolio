@@ -13,11 +13,10 @@ export default {
 
 </script>
 
-<template >
+<template>
 
     <div class="col-6" v-if="project">
-        <RouterLink :to="{ name: 'single-project', params: { id: project.id } }" >
-            <div class=" card">
+        <div class="my_card h-100">
             <template v-if="project">
 
                 <template v-if="project.img.startsWith('uploads')">
@@ -27,26 +26,25 @@ export default {
                     <img class="card-img-top" :src="project.img" alt="">
                 </template>
 
-                <div class="card-body d-flex flex-column ">
-                    <h4 class="card-title h-25">{{ project.title }}</h4>
-                    <p class="card-text h-50 overflow-hidden mt-5">{{ project.description }}</p>
-                    <div class="card-body h-25">
-                        <a :href="project.github_link" class="btn btn-primary mb-2">View it on GitHub</a>
-                        <p class="card-text text-start fw-bold m-2">Project start: <span class="fw-normal">{{
-                                project.start_date
-                                }}</span></p>
-                        <p class="card-text text-start fw-bold m-2">Project end: <span class="fw-normal">{{
-                                project.end_date
-                                }}</span></p>
+                <div class="my_card_body d-flex h-100">
+                    <h5 class="my_card_title ibm-plex-mono-medium">{{ project.title }}</h5>
+                    <p class=" m-3 ibm-plex-mono-light text-end ">{{ project.description }}</p>
+
+                    <div class="links d-flex">
+                        <a :href="project.github_link" class="my_btn">GitHub</a>
+                        <RouterLink class=" my_btn" :to="{ name: 'single-project', params: { id: project.id } }">
+                            Details
+                        </RouterLink>
                     </div>
+
                 </div>
 
             </template>
             <template v-else>
                 Loading
             </template>
-    </div>
-    </RouterLink>
+        </div>
+
     </div>
     <div v-else>Loading</div>
 </template>

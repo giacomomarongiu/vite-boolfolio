@@ -61,10 +61,10 @@ export default {
 </script>
 
 <template>
-    <AppHeader></AppHeader>
+    <AppHeader class="my_blog_header"></AppHeader>
     <main>
 
-        <h2 class="text-center m-5">Welcome, let's see my projects</h2>
+        <h2 class="text-center m-5"></h2>
         <div class="container">
             <template v-if="this.projects"></template>
             <div class="row g-4">
@@ -98,4 +98,8 @@ export default {
 
 </template>
 
-<style scoped></style>
+<style>
+.my_blog_header * {
+    color: white !important;;
+}
+</style>
