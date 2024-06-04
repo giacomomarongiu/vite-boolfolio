@@ -13,12 +13,13 @@ export default {
 </script>
 
 <template>
-<!--   <AppHeader></AppHeader> -->
+  <!--   <AppHeader></AppHeader> -->
 
     <RouterView></RouterView>
 
-
-<!-- <AppFooter></AppFooter> -->
+  <!-- <AppFooter></AppFooter> -->
 </template>
 
-<style scoped></style>
+<style >
+
+</style>

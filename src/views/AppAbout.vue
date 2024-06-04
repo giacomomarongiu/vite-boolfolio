@@ -15,7 +15,7 @@ export default {
         return {
             base_api_url: 'http://127.0.0.1:8000',
             base_projects_url: '/api/projects',
-            projects: [],
+            projects: null,
             activeIndex: 0
             //loading: true
         }
@@ -65,33 +65,37 @@ export default {
             <div class="inner-square d-flex  px-2 justify-content-between flex-column">
                 <AppHeader></AppHeader>
 
-                <div id="carouselExample" class="carousel slide mb-5">
-                    <div class="carousel-inner m-auto my_height">
+                <template v-if="this.projects != null">
+                    <div id="carouselProjects" class="carousel slide mb-5">
+                        <div class="carousel-inner m-auto my_height">
 
-                        <div class="carousel-item" v-for="(project, index) in this.projects"
-                            :class="{ active: index === activeIndex }">
-                            {{ console.log(project.img) }}
-                            <template v-if="(project.img).startsWith('uploads')">
-                                <img class="card-img-top" :src="project.img" alt="">
+                            <div class="carousel-item" v-for="(project, index) in this.projects"
+                                :class="{ active: index === activeIndex }">
+                                {{ console.log(project.img) }}
+                                <template v-if="(project.img).startsWith('uploads')">
+                                    <img class="card-img-top" :src="project.img" alt="">
 
-                            </template>
-                            <template v-else>
-                                <img class="card-img-top" :src="project.img" alt="">
-                            </template>
+                                </template>
+                                <template v-else>
+                                    <img class="card-img-top" :src="project.img" alt="">
+                                </template>
+                            </div>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
+                </template>
+                <template v-else>
+                    <div class="d-flex justify-content-center align-items-center fw-bold "><div class="spinner"></div>LOADING</div>
+                </template>
                 <AppFooter></AppFooter>
             </div>
         </div>
@@ -104,5 +108,23 @@ export default {
 .my_height {
     max-height: 70vh;
     max-width: 150vh;
+}
+
+.spinner {
+    border: 1rem solid rgb(17, 17, 123);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 </style>
