@@ -102,4 +102,6 @@ export default {
 .my_blog_header * {
     color: white !important;;
 }
+
+
 </style>

@@ -32,7 +32,7 @@ export default {
     width: 250px;
     border: 1rem solid rgba(196, 48, 48, 0.722);
     border-radius: 50%;
-    position: absolute;
+    position: fixed;
     left: 10%;
     top: 10%;
     display: flex;
@@ -42,6 +42,5 @@ export default {
     font-size: 70px;
     transform: rotate(320deg);
     z-index: 1;
-
 }
 </style>
