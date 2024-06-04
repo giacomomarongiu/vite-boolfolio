@@ -12,13 +12,13 @@ name: "AppHeader",
                     :to="{ name: 'home' }">Home
                 </RouterLink>
                 <RouterLink class="btn border-0  btn-sm btn-outline-danger text-decoration-none fw-bold"
-                    :to="{ name: 'blog' }">Blog
-                </RouterLink>
-                <RouterLink class="btn border-0  btn-sm btn-outline-danger text-decoration-none fw-bold"
-                    :to="{ name: 'about' }">About
+                    :to="{ name: 'about' }">Photogallery
                 </RouterLink>
                 <RouterLink class="btn border-0  btn-sm btn-outline-danger text-decoration-none fw-bold"
                     :to="{ name: 'contacts' }">Contacts
+                </RouterLink>
+                <RouterLink class="btn border-0  btn-sm btn-outline-danger text-decoration-none fw-bold"
+                    :to="{ name: 'blog' }">Blog
                 </RouterLink>
             </form>
         </nav>
