@@ -66,6 +66,7 @@ export default {
 
         <h2 class="text-center m-5">Welcome, let's see my projects</h2>
         <div class="container">
+            <template v-if="this.projects"></template>
             <div class="row g-4">
                 <!--Ciclo all'interno del mio array, ho bisogno del .data perché il resto del mio array associativo mi da altre info-->
                     <ProjectCard :project="project" v-for="project in projects.data"></ProjectCard>

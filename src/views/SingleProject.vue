@@ -18,22 +18,23 @@ export default {
         }
     },
     methods: {
-
-        /**Mi permette di effettuare una chiama API al mio server locale
-     * 
-     * @param {string} url 
-     */
         callAPI(url) {
             axios
                 .get(url)
                 .then(response => {
-                    console.log(response);
-                    this.project = response.data.response
+                    //If the call go fine
+                    if (response.data.success) {
+                        console.log(response.data.response);
+                        this.project = response.data.response;
+                    }
+                    else {
+                        //if go bad
+                        this.$router.push({ name: 'not-found-page' });
+                    }
                 })
-                .catch(err => {
-                    console.error(err);
-                })
+                .catch(error => console.log(error));
         }
+
     },
     created() {
         //Chiamo la funzione nel Created per avere già dati in pagina
